@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Resonance Sound | Explore and book sound production</title>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#EEF2F3;--surface:#fff;--ink:#14212B;--muted:#51636E;--line:#D3DCE0;--accent:#D92B20;--on-accent:#fff;--teal:#1F6F78;--display:'Bricolage Grotesque',Georgia,'Times New Roman',serif;--body:'DM Sans',system-ui,-apple-system,'Segoe UI',Arial,sans-serif;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#10181D;--surface:#18232A;--ink:#E8EEF0;--muted:#9AAAB2;--line:#2A3A43;--accent:#FF5A4E;--on-accent:#10181D;--teal:#4FB6BF}}
+:root[data-theme="dark"]{--bg:#10181D;--surface:#18232A;--ink:#E8EEF0;--muted:#9AAAB2;--line:#2A3A43;--accent:#FF5A4E;--on-accent:#10181D;--teal:#4FB6BF}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1rem/1.6 var(--body)}
+h1,h2,h3{font-family:var(--display);line-height:1.1;margin:0}
+h1{font-size:clamp(2.4rem,7vw,4.6rem);font-weight:700;letter-spacing:-.02em;max-width:14ch}
+h2{font-size:clamp(1.7rem,4vw,2.4rem);font-weight:700}
+h3{font-size:1.2rem;font-weight:500}
+p{margin:0 0 1rem;max-width:62ch}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--teal);outline-offset:3px}
+.wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);border-bottom:1px solid var(--line)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:64px;flex-wrap:wrap}
+.brand{font:700 1.25rem var(--display);text-decoration:none;display:flex;align-items:center;gap:10px}
+.brand i{width:12px;height:12px;border-radius:50%;background:var(--accent);display:inline-block}
+nav{display:flex;gap:6px}
+nav a{padding:8px 14px;border-radius:8px;text-decoration:none;font-weight:500}
+nav a[aria-current="page"]{background:var(--surface);border:1px solid var(--line)}
+.btn{display:inline-block;background:var(--accent);color:var(--on-accent);font:700 1rem var(--body);padding:13px 24px;border-radius:10px;border:0;cursor:pointer;text-decoration:none}
+.btn.alt{background:transparent;color:var(--ink);border:1.5px solid var(--ink)}
+.page[hidden]{display:none}
+.hero{padding:56px 0 24px}
+.hero p{font-size:1.15rem;color:var(--muted);margin-top:20px}
+.stage{position:relative;overflow:hidden;background:#10181D;color:#E8EEF0;border-radius:22px;padding:72px 44px;margin-top:28px;min-height:440px;display:flex;align-items:center}
+.stage .wave{position:absolute;inset:0;height:100%;gap:6px;padding:0 16px;-webkit-mask-image:linear-gradient(90deg,transparent 18%,#000 72%);mask-image:linear-gradient(90deg,transparent 18%,#000 72%)}
+.stage .wave span{background:#4FB6BF;border-radius:4px}
+.stage .wave span:nth-child(44){background:#FF5A4E}
+.stage .copy{position:relative;max-width:580px}
+.stage h1{color:#fff;font-size:clamp(2.6rem,8vw,5.2rem)}
+.stage p{color:#C9D5DA}
+.stage .eyebrow{font-weight:700;letter-spacing:.09em;text-transform:uppercase;font-size:.8rem;color:#4FB6BF;margin:0 0 16px}
+.stage .btn.alt{color:#fff;border-color:#fff}
+.stage{background:radial-gradient(circle at 82% 28%,rgba(255,90,78,.3),transparent 46%),radial-gradient(circle at 10% 90%,rgba(79,182,191,.22),transparent 40%),#10181D}
+.stage .wave span{animation:eq 1.3s ease-in-out infinite alternate;animation-delay:calc(var(--i)*-.09s)}
+@keyframes eq{from{transform:scaleY(.45)}to{transform:scaleY(1)}}
+.hl{background:linear-gradient(90deg,#4FB6BF,#FF5A4E);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent}
+.rec{display:inline-block;width:10px;height:10px;border-radius:50%;background:#FF5A4E;margin-right:10px;animation:pulse 1.4s ease-in-out infinite}
+@keyframes pulse{50%{opacity:.25}}
+.ticker{overflow:hidden;white-space:nowrap;margin:22px 0 6px;border-block:1px solid var(--line);padding:14px 0}
+.ticker .t{display:inline-block;animation:tick 32s linear infinite;font:700 1.05rem var(--display);text-transform:uppercase;letter-spacing:.06em}
+.ticker .t span{margin:0 22px}
+.ticker .t b{color:var(--accent)}
+@keyframes tick{to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion:reduce){.stage .wave span,.rec,.ticker .t{animation:none}}
+.row{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}
+.console{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:20px;margin:28px 0 56px}
+.wave{display:flex;align-items:center;gap:3px;height:150px;overflow:hidden}
+.wave span{flex:1;min-width:2px;background:var(--teal);border-radius:2px;transition:height .5s ease}
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin:18px 0}
+.tabs button{font:500 .95rem var(--body);color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:999px;padding:9px 16px;cursor:pointer}
+.tabs button[aria-selected="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.detail{display:grid;gap:20px;grid-template-columns:1.3fr 1fr}
+dl{margin:0;display:grid;gap:12px}
+dt{font-weight:700;font-size:.9rem;color:var(--muted)}
+dd{margin:0}
+section.band{padding:40px 0}
+.steps{display:grid;gap:16px;grid-template-columns:repeat(3,1fr);margin-top:24px;padding:0;list-style:none;counter-reset:s}
+.steps li{counter-increment:s;border-top:3px solid var(--teal);padding-top:14px}
+.steps li::before{content:"Step " counter(s);font-weight:700;color:var(--teal);display:block;margin-bottom:4px}
+.cta{background:var(--ink);color:var(--bg);border-radius:14px;padding:36px;margin:24px 0 56px}
+.cta .btn{margin-top:8px}
+.grid{display:grid;gap:16px;grid-template-columns:repeat(2,1fr);margin:28px 0 56px}
+.svc{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:22px;display:flex;flex-direction:column;gap:10px}
+.svc p{margin:0}
+.svc .btn{margin-top:auto;align-self:flex-start}
+.vals{display:grid;gap:16px;grid-template-columns:repeat(3,1fr);margin-top:24px}
+.vals div{border-top:3px solid var(--teal);padding-top:14px}
+.vals p{margin:6px 0 0}
+.book{display:grid;gap:28px;grid-template-columns:1.2fr 1fr;padding:48px 0 56px;align-items:start}
+form{display:grid;gap:16px;grid-template-columns:1fr 1fr}
+.f{display:flex;flex-direction:column;gap:6px}
+.f.full{grid-column:1/-1}
+label{font-weight:700;font-size:.92rem}
+input,select,textarea{font:400 1rem var(--body);color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:11px 12px;width:100%}
+textarea{min-height:100px;resize:vertical}
+.ticket{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:22px;position:sticky;top:calc(env(safe-area-inset-top,0px) + 80px)}
+.ticket h2{font-size:1.4rem;margin-bottom:14px}
+.ticket dl div{display:flex;justify-content:space-between;gap:12px;border-bottom:1px dashed var(--line);padding-bottom:8px}
+.ticket dd{text-align:right;font-weight:500}
+.err{color:var(--accent);font-weight:500;grid-column:1/-1;margin:0}
+.done{border:2px solid var(--teal);border-radius:14px;padding:22px;margin-top:20px;background:var(--surface)}
+.ceo{display:flex;gap:20px;align-items:center;flex-wrap:wrap;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:24px;margin:8px 0 24px}.ceo .av{flex:none;width:88px;height:88px;border-radius:50%;background:var(--teal);color:var(--bg);display:flex;align-items:center;justify-content:center;font:700 1.1rem var(--display)}.ceo>div:last-child{flex:1;min-width:220px}
+footer{border-top:1px solid var(--line);padding:24px 0;color:var(--muted);font-size:.92rem}
+@media (max-width:760px){.detail,.book,.steps,form,.grid,.vals{grid-template-columns:1fr}.ticket{position:static}.stage{padding:44px 22px;min-height:400px}.wave{height:110px}}
+@media (prefers-reduced-motion:reduce){.wave span{transition:none}}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+<a class="brand" href="#/"><svg width="34" height="34" viewBox="0 0 40 40" aria-hidden="true"><rect x="3" y="13" width="5" height="14" rx="2.5" fill="var(--teal)"/><rect x="10.5" y="7" width="5" height="26" rx="2.5" fill="var(--teal)"/><rect x="18" y="2" width="5" height="36" rx="2.5" fill="var(--accent)"/><rect x="25.5" y="9" width="5" height="22" rx="2.5" fill="var(--teal)"/><rect x="33" y="15" width="5" height="10" rx="2.5" fill="var(--teal)"/></svg>Resonance Sound</a>
+<nav aria-label="Main"><a href="#/" id="n-explore">Explore</a><a href="#/services" id="n-services">Services</a><a href="#/about" id="n-about">About us</a><a href="#/book" id="n-book">Book a session</a></nav>
+</div></header>
+
+<main>
+<div class="page" id="p-explore">
+<div class="wrap">
+<div class="hero stage"><div class="wave" id="wave" aria-hidden="true"></div><div class="copy">
+<p class="eyebrow"><i class="rec"></i>Now booking live sound and studio sessions</p>
+<h1>Make it sound <span class="hl">unforgettable.</span></h1>
+<p>Studio sessions, live sound, rentals and a personal engineer for your show. We make sure every note lands.</p>
+<div class="row"><a class="btn" href="#/book">Book a session</a><a class="btn alt" href="#/services">Explore services</a></div></div>
+</div>
+
+<div class="ticker"><div class="t" aria-hidden="true"></div></div>
+<div class="console" id="services">
+<h2 style="margin-bottom:4px">What are you planning?</h2>
+<div class="tabs" role="tablist" aria-label="Services" id="tabs"></div>
+<div class="detail" role="tabpanel" id="panel" aria-live="polite">
+<div><h3 id="d-name"></h3><p id="d-what" style="margin-top:8px"></p><a class="btn" id="d-book" href="#/book">Book this service</a></div>
+<dl><div><dt>Best for</dt><dd id="d-best"></dd></div><div><dt>You get</dt><dd id="d-get"></dd></div><div><dt>Quote</dt><dd>Sent within a day of your request</dd></div></dl>
+</div>
+</div>
+
+<section class="band">
+<h2>How a booking works</h2>
+<ol class="steps">
+<li><h3>Tell us the plan</h3><p>Pick a service, a date and a time. Add notes about the song, event or project.</p></li>
+<li><h3>Get a quote</h3><p>We confirm availability, equipment and price, and agree the details with you.</p></li>
+<li><h3>Show up and sound great</h3><p>We handle setup, recording or mixing, and deliver your files when the work is done.</p></li>
+</ol>
+</section>
+
+<section class="ceo" aria-label="Founder"><div class="av" aria-hidden="true">AA</div><div><h2 style="font-size:1.5rem">Ayomikun Adedoyin (Awhizy)</h2><p style="margin:4px 0 8px;color:var(--muted);font-weight:700">CEO</p><p style="margin:0">Write two or three sentences about your background, your experience in sound and what clients can expect when they work with you.</p></div></section>
+
+<div class="cta"><h2>Have a date in mind?</h2><p style="margin-top:10px">Send a request in two minutes. Nothing is final until you approve the quote.</p><div class="row"><a class="btn" href="#/book">Start a booking request</a><a class="btn alt" style="color:var(--bg);border-color:var(--bg)" href="https://wa.me/2348168259465">WhatsApp 0816 825 9465</a></div></div>
+</div>
+</div>
+
+<div class="page" id="p-services" hidden>
+<div class="wrap">
+<div class="hero">
+<h1 style="font-size:clamp(2rem,5vw,3rem);max-width:none">Our services</h1>
+<p>Everything from studio production to live sound, equipment rentals and a personal sound engineer for your concert. Pick what you need and book it.</p>
+</div>
+<div class="grid" id="list"></div>
+<div class="cta"><h2>Not sure what you need?</h2><p style="margin-top:10px">Book a consultation and we will plan it with you.</p><div class="row"><a class="btn" href="#/book">Book a session</a><a class="btn alt" style="color:var(--bg);border-color:var(--bg)" href="https://wa.me/2348168259465">WhatsApp 0816 825 9465</a></div></div>
+</div>
+</div>
+
+<div class="page" id="p-about" hidden>
+<div class="wrap">
+<div class="hero">
+<h1 style="font-size:clamp(2rem,5vw,3rem);max-width:none">About Resonance Sound</h1>
+<p>Engineering Sound, Creating Experiences.</p>
+</div>
+<section class="ceo" aria-label="CEO"><div class="av" aria-hidden="true">AA</div><div><h2 style="font-size:1.5rem">Ayomikun Adedoyin (Awhizy)</h2><p style="margin:4px 0 8px;color:var(--muted);font-weight:700">Founder and CEO</p><p style="margin:0">Sound Engineer, Audio Production Specialist and Technical Project Manager.</p></div></section>
+<section class="band"><h2>About me</h2>
+<p>I am a Sound Engineer, Audio Production Specialist, and Technical Project Manager with a strong passion for delivering exceptional sound experiences through professional audio engineering, technical expertise, and creative problem-solving.</p>
+<p>As the founder of Resonance Sound, I am committed to helping churches, event organisers, DJs, studios, and individuals achieve clear, balanced, powerful, and professional sound. My experience spans live sound engineering, church sound system installation and setup, audio production, livestream audio, recording, sound system configuration, and technical troubleshooting.</p>
+<p>My approach combines technical knowledge with practical experience in managing audio equipment, configuring mixers and speaker systems, optimising microphones and monitors, managing subwoofers and crossovers, and troubleshooting sound-related challenges to achieve the best possible results.</p>
+<p>Beyond sound engineering, I have experience leading technical teams, coordinating technical projects, and ensuring that audio systems are properly planned, configured, and operated. I understand that excellent sound is not simply about having quality equipment; it requires the right setup, proper gain staging, effective system management, attention to detail, and a clear understanding of the environment and audience.</p>
+<p>Through Resonance Sound, my mission is to provide reliable, professional, and practical audio solutions that meet the unique needs of every client.</p>
+<h2 style="margin-top:40px">Our services</h2>
+<ul style="max-width:62ch;padding-left:20px;margin:12px 0 0">
+<li>Professional live sound engineering and event audio support.</li>
+<li>Church sound system setup, configuration, and optimisation.</li>
+<li>Audio consultancy and sound system planning.</li>
+<li>Training for sound engineers and technical teams.</li>
+<li>Livestream audio setup and management.</li>
+<li>Studio recording and audio production.</li>
+<li>DJ and event sound system setup.</li>
+<li>Microphone, mixer, amplifier, monitor, and speaker configuration.</li>
+<li>Audio troubleshooting, system maintenance, and technical support.</li>
+</ul>
+<h2 style="margin-top:40px">Our commitment</h2>
+<p style="margin-top:12px">At Resonance Sound, we believe that every voice deserves to be heard clearly and every sound experience deserves professional attention. We are committed to quality, technical excellence, continuous learning, and client satisfaction.</p>
+<p>Our goal is to help clients get the best performance from their audio systems through professional service, practical knowledge, and solutions tailored to their needs.</p>
+<p><strong>Resonance Sound: Professional Sound. Technical Excellence. Exceptional Experiences.</strong></p>
+</section>
+<div class="cta"><h2>Let us work on your sound</h2><p style="margin-top:10px">Tell us about your event, church or recording and we will plan it with you.</p><div class="row"><a class="btn" href="#/book">Book a session</a><a class="btn alt" style="color:var(--bg);border-color:var(--bg)" href="https://wa.me/2348168259465">WhatsApp 0816 825 9465</a></div></div>
+</div>
+</div>
+
+<div class="page" id="p-book" hidden>
+<div class="wrap book">
+<div>
+<h1 style="font-size:clamp(2rem,5vw,3rem);max-width:none">Book a session</h1>
+<p style="color:var(--muted);margin-top:12px">Fill in what you know. We reply with a quote and confirm the date.</p>
+<form id="form" novalidate>
+<div class="f"><label for="name">Full name</label><input id="name" autocomplete="name"></div>
+<div class="f"><label for="email">Email</label><input id="email" type="email" autocomplete="email"></div>
+<div class="f"><label for="phone">Phone or WhatsApp</label><input id="phone" type="tel" autocomplete="tel"></div>
+<div class="f"><label for="service">Service</label><select id="service"></select></div>
+<div class="f"><label for="date">Date</label><input id="date" type="date"></div>
+<div class="f"><label for="time">Start time</label><input id="time" type="time"></div>
+<div class="f"><label for="hours">Hours needed</label><input id="hours" type="number" min="1" max="12" value="3"></div>
+<div class="f"><label for="venue">Studio or venue</label><input id="venue" placeholder="Our studio, or your venue"></div>
+<div class="f full"><label for="notes">Notes</label><textarea id="notes" placeholder="Number of singers, instruments, expected crowd, anything we should prepare"></textarea></div>
+<p class="err" id="err" role="alert"></p>
+<div class="f full"><button class="btn" type="submit">Send booking request</button></div>
+</form>
+<div class="done" id="done" hidden>
+<h3>Your request is ready to send</h3>
+<p style="margin-top:8px">This page does not send anything by itself. Use the button below to send it to the studio on WhatsApp, or copy it.</p>
+<div class="row"><a class="btn" id="mail" href="#">Send on WhatsApp</a><button class="btn alt" id="copy" type="button">Copy request</button></div>
+<p id="copied" style="margin:10px 0 0;color:var(--teal);font-weight:700"></p>
+</div>
+</div>
+<aside class="ticket" aria-label="Request summary">
+<h2>Your request</h2>
+<dl id="sum"></dl>
+</aside>
+</div>
+</div>
+</main>
+
+<footer><div class="wrap">Resonance Sound. Live sound, studio production, equipment rentals, church sound upgrades, training and consultation. Call or WhatsApp 0816 825 9465.</div></footer>
+
+<script>
+var CONTACT_EMAIL="bookings@yourstudio.com";
+var S=[
+{n:"Studio production",w:"Record, edit and finish vocals and instruments in a treated room, with an engineer running the session.",b:"Songs, EPs, choirs, demos",g:"Tracked takes, mixing and mastered files",p:3},
+{n:"Live sound production",w:"PA, microphones, mixing and a crew for the whole event, from soundcheck to the last speaker.",b:"Concerts, weddings, conferences, services",g:"Setup, operation and teardown",p:7},
+{n:"Equipment rentals",w:"Hire speakers, mixers, microphones and other sound gear for your event, with setup support available.",b:"Events, shows, churches",g:"Tested equipment and optional setup support",p:9},
+{n:"Personal sound engineer",w:"A dedicated sound engineer assigned to your concert, tour date or event, who learns your sound and runs it for you.",b:"Artists, bands, concerts, tours",g:"One engineer from soundcheck to the last song",p:10},
+{n:"Church sound upgrades",w:"Assess and upgrade your church sound system, from speakers and mixers to installation and operator set-up.",b:"Churches and worship centres",g:"System assessment, installation and handover",p:4},
+{n:"Training",w:"Hands-on training for sound operators and technical teams, from the basics to running a live service.",b:"Church media teams, aspiring engineers",g:"Practical sessions and guidance",p:2},
+{n:"Consultation",w:"Talk through your studio, event or church sound plans and get clear advice on equipment, set-up and budget.",b:"New studios, events, churches",g:"A clear plan and recommendations",p:6}
+];
+var $=function(i){return document.getElementById(i)};
+var wave=$("wave"),tabs=$("tabs"),sel=$("service"),B=56;
+for(var i=0;i<B;i++){var sp=document.createElement("span");sp.style.setProperty("--i",i);wave.appendChild(sp)}
+function shape(k){var bars=wave.children;for(var i=0;i<B;i++){var x=i/B,v=Math.abs(Math.sin(x*(3+k*2.3)*Math.PI+k))*.55+Math.abs(Math.sin(x*(11+k*4)+k*1.7))*.35+.08;bars[i].style.height=Math.min(100,v*100)+"%"}}
+S.forEach(function(s,i){
+var b=document.createElement("button");b.type="button";b.role="tab";b.textContent=s.n;b.setAttribute("aria-selected","false");b.onclick=function(){pick(i)};tabs.appendChild(b);
+var o=document.createElement("option");o.textContent=s.n;sel.appendChild(o)});
+function pick(i){var s=S[i];Array.prototype.forEach.call(tabs.children,function(b,j){b.setAttribute("aria-selected",j===i)});
+$("d-name").textContent=s.n;$("d-what").textContent=s.w;$("d-best").textContent=s.b;$("d-get").textContent=s.g;shape(s.p);
+$("d-book").onclick=function(){sel.value=s.n;fill()}}
+pick(0);
+var tk=document.querySelector(".ticker .t"),th=S.map(function(s){return"<span>"+s.n+"</span><b>/</b>"}).join("");tk.innerHTML=th+th;
+var list=$("list");S.forEach(function(s){var c=document.createElement("article");c.className="svc";c.innerHTML="<h3></h3><p></p><dl><div><dt>Best for</dt><dd></dd></div><div><dt>You get</dt><dd></dd></div></dl>";c.querySelector("h3").textContent=s.n;c.querySelector("p").textContent=s.w;var dd=c.querySelectorAll("dd");dd[0].textContent=s.b;dd[1].textContent=s.g;var a=document.createElement("a");a.className="btn";a.href="#/book";a.textContent="Book this service";a.onclick=function(){sel.value=s.n;fill()};c.appendChild(a);list.appendChild(c)});
+
+function route(){var h=location.hash,pg=h==="#/book"?"book":h==="#/services"?"services":h==="#/about"?"about":"explore";
+["explore","services","about","book"].forEach(function(k){$("p-"+k).hidden=k!==pg;$("n-"+k).setAttribute("aria-current",k===pg?"page":"false")});
+
+document.title=({book:"Book a session",services:"Services",about:"About us",explore:"Explore"}[pg])+" | Resonance Sound";
+window.scrollTo(0,0)}
+window.addEventListener("hashchange",route);route();
+
+var F=["name","email","phone","service","date","time","hours","venue","notes"];
+var L={name:"Name",email:"Email",phone:"Phone",service:"Service",date:"Date",time:"Start time",hours:"Hours",venue:"Venue",notes:"Notes"};
+var d=new Date();$("date").min=d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0");
+try{var dr=JSON.parse(localStorage.getItem("rs-draft")||"{}");F.forEach(function(k){if(dr[k])$(k).value=dr[k]})}catch(e){}
+function val(k){var v=$(k).value.trim();if(k==="date"&&v){var t=new Date(v+"T00:00");v=t.toLocaleDateString(undefined,{weekday:"long",year:"numeric",month:"long",day:"numeric"})}if(k==="hours"&&v)v+=" hours";return v}
+function fill(){var h="";F.forEach(function(k){if(k==="notes")return;h+="<div><dt>"+L[k]+"</dt><dd></dd></div>"});$("sum").innerHTML=h;
+var dds=$("sum").querySelectorAll("dd"),n=0;F.forEach(function(k){if(k==="notes")return;dds[n++].textContent=val(k)||"Not added yet"});
+try{var o={};F.forEach(function(k){o[k]=$(k).value});localStorage.setItem("rs-draft",JSON.stringify(o))}catch(e){}}
+$("form").addEventListener("input",fill);fill();
+
+function text(){return"Booking request\n"+F.filter(function(k){return val(k)}).map(function(k){return L[k]+": "+val(k)}).join("\n")}
+$("form").addEventListener("submit",function(e){e.preventDefault();var m=[];
+if(!$("name").value.trim())m.push("Enter your name.");
+if(!$("email").value.trim()&&!$("phone").value.trim())m.push("Add an email or a phone number so we can reply.");
+if(!$("date").value)m.push("Choose a date.");
+$("err").textContent=m.join(" ");
+if(m.length){$("done").hidden=true;return}
+$("mail").href="https://wa.me/2348168259465?text="+encodeURIComponent(text());
+$("done").hidden=false;$("done").scrollIntoView({behavior:"smooth",block:"nearest"})});
+$("copy").onclick=function(){var t=text();(navigator.clipboard?navigator.clipboard.writeText(t):Promise.reject()).then(function(){$("copied").textContent="Request copied."},function(){$("copied").textContent="Copy failed. Select the summary on the right and copy it."})};
+</script>
+</body>
+</html>
