@@ -97,6 +97,20 @@ section.band{padding:40px 0}
 .svc:nth-child(3n+1){--svc-accent:#D92B20}.svc:nth-child(3n+2){--svc-accent:#1F6F78}.svc:nth-child(3n){--svc-accent:#D89A18}
 .svc p{margin:0}
 .svc .btn{margin-top:auto;align-self:flex-start}
+.explore-gallery{margin:12px 0 40px}
+.explore-gallery>p{color:var(--muted);margin:12px auto 22px}
+.explore-gallery-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;text-align:left}
+.explore-gallery figure{margin:0;overflow:hidden;border:1px solid var(--line);border-radius:14px;background:var(--surface)}
+.explore-photo-slot,.explore-gallery figure>img{display:grid;width:100%;aspect-ratio:4/3;min-height:200px}
+.explore-photo-slot{place-items:center;border-bottom:1px solid var(--line);background:linear-gradient(135deg,var(--bg),var(--surface));color:var(--muted)}
+.explore-photo-slot span{display:flex;align-items:center;gap:10px;font-weight:700}
+.explore-photo-slot span::before{content:"+";width:34px;height:34px;border:1px dashed currentColor;border-radius:50%;display:grid;place-items:center;font-size:1.35rem;line-height:1}
+.explore-gallery figure>img{object-fit:cover;background:var(--line)}
+.explore-gallery figure>img.product-photo{object-fit:contain;background:#fff}
+.explore-gallery figcaption{padding:13px 16px;font-weight:700}
+.explore-video{display:grid;grid-template-columns:minmax(220px,.8fr) 1fr;gap:32px;align-items:center;margin:56px 0}
+.explore-video video{display:block;width:100%;max-width:420px;aspect-ratio:9/16;object-fit:cover;border-radius:16px;background:#10181D}
+.explore-video h2{margin-bottom:12px}
 .vals{display:grid;gap:16px;grid-template-columns:repeat(3,1fr);margin-top:24px}
 .vals div{border-top:3px solid var(--teal);padding-top:14px}
 .vals p{margin:6px 0 0}
@@ -165,7 +179,7 @@ textarea{min-height:100px;resize:vertical}
 footer{border-top:1px solid var(--line);padding:24px 0;color:var(--muted);font-size:.92rem}
 footer .wrap{display:flex;align-items:center;gap:18px;flex-wrap:wrap}
 footer img{display:block;width:150px;height:40px;object-fit:contain}
-@media (max-width:760px){.detail,.book,.steps,form,.grid,.vals,.services-hero,.about-gallery{grid-template-columns:1fr}.ticket{position:static}.stage{padding:44px 22px;min-height:400px}.wave{height:110px}.services-photo{min-height:220px}.about-hero .wrap{padding-top:52px;padding-bottom:52px}.meet-hero .wrap{grid-template-columns:1fr;gap:20px;min-height:0;padding-top:42px;padding-bottom:38px}.meet-hero .meet-copy{order:0}.meet-art{order:1;width:min(74vw,290px);margin:12px auto 8px}.meet-bars{right:-12px}.about-gallery figure:nth-child(2){margin-top:0}.about-gallery figure,.about-gallery img{min-height:190px}}
+@media (max-width:760px){.detail,.book,.steps,form,.grid,.vals,.services-hero,.about-gallery,.explore-video{grid-template-columns:1fr}.ticket{position:static}.stage{padding:44px 22px;min-height:400px}.wave{height:110px}.services-photo{min-height:220px}.explore-video video{max-width:320px;margin:0 auto}.about-hero .wrap{padding-top:52px;padding-bottom:52px}.meet-hero .wrap{grid-template-columns:1fr;gap:20px;min-height:0;padding-top:42px;padding-bottom:38px}.meet-hero .meet-copy{order:0}.meet-art{order:1;width:min(74vw,290px);margin:12px auto 8px}.meet-bars{right:-12px}.about-gallery figure:nth-child(2){margin-top:0}.about-gallery figure,.about-gallery img{min-height:190px}}
 @media (max-width:760px){header .wrap{justify-content:center}header nav{width:100%;justify-content:center;flex-wrap:wrap}}
 @media (max-width:380px){header nav a{padding:6px 8px;font-size:.875rem}}
 @media (prefers-reduced-motion:reduce){.wave span{transition:none}.meet-art,.meet-art::before,.meet-art::after,.meet-brandplate,.meet-bars i{animation:none}}
@@ -196,6 +210,24 @@ footer img{display:block;width:150px;height:40px;object-fit:contain}
 <dl><div><dt>Best for</dt><dd id="d-best"></dd></div><div><dt>You get</dt><dd id="d-get"></dd></div></dl>
 </div>
 </div>
+
+<section class="explore-gallery" aria-labelledby="explore-gallery-title">
+<h2 id="explore-gallery-title">The moments behind the sound</h2>
+<p>A closer look at the sound systems and people behind the work.</p>
+<div class="explore-gallery-grid">
+<figure><img src="https://www.dbevents.co.nz/wp-content/uploads/2021/03/line-array-stack-main-600x600.png" alt="Pair of line-array speaker stacks and subwoofers" loading="lazy" decoding="async"><figcaption>Line-array speakers</figcaption></figure>
+<figure><img class="product-photo" src="https://behringer.com/wing/products/wing.png" alt="Behringer WING digital mixing console" loading="lazy" decoding="async"><figcaption>Behringer WING</figcaption></figure>
+<figure><div class="explore-photo-slot" role="img" aria-label="Photo placeholder for behind the scenes"><span>Add photo</span></div><figcaption>Behind the scenes</figcaption></figure>
+</div>
+</section>
+
+<section class="explore-video" aria-labelledby="explore-video-title">
+<video controls playsinline preload="metadata" aria-label="Mini studio arrangement for a client">
+<source src="asserts/explore-mini-studio.mp4" type="video/mp4">
+Your browser does not support video playback.
+</video>
+<div><h2 id="explore-video-title">Mini studio arrangement for a client</h2><p>See a recent mini studio setup arranged for one of our clients.</p></div>
+</section>
 
 <section class="band">
 <h2>How a booking works</h2>
@@ -265,7 +297,7 @@ footer img{display:block;width:150px;height:40px;object-fit:contain}
 <p class="meet-kicker">Founder · Sound Engineer</p>
 <h1>Meet Awhizy</h1>
 <p class="meet-role">Ayomikun Adedoyin</p>
-<p class="meet-summary">Sound engineer and technical project manager based in Ibadan, Nigeria.</p>
+<p class="meet-summary">Sound engineer and technical project manager.</p>
 <div class="meet-tags" aria-label="Areas of work"><span>Live sound</span><span>Audio production</span><span>Church audio</span></div>
 <div class="meet-actions"><a class="btn" href="#/book">Book a session</a><a class="btn alt" href="#/services">Explore services</a></div>
 </div>
@@ -291,8 +323,10 @@ footer img{display:block;width:150px;height:40px;object-fit:contain}
 <div class="wrap book">
 <div>
 <h1 style="font-size:clamp(2rem,5vw,3rem);max-width:none">Book a session</h1>
-<p style="color:var(--muted);margin-top:12px">Fill in what you know. We reply with a quote and confirm the date.</p>
+<p style="color:var(--muted);margin-top:12px">Send your booking request using our Google Form. We reply with a quote and confirm the date.</p>
 <p class="quote-promise">Your quote will be sent within 24 hours.</p>
+<p><a class="btn" href="https://docs.google.com/forms/d/e/1FAIpQLSdDzC23pfxyqGqdDTNzJ21jWmC935EWGnKmVV5HseRsB3Q68g/viewform" target="_blank" rel="noopener noreferrer">Open Google booking form</a></p>
+<p style="margin-top:20px;color:var(--muted)">Complete the form below to send your request to our booking form. After submission, you can open a prefilled email draft addressed to yourself and press Send to receive a copy.</p>
 <form id="form" novalidate>
 <div class="f"><label for="name">Full name</label><input id="name" autocomplete="name"></div>
 <div class="f"><label for="email">Email</label><input id="email" type="email" autocomplete="email"></div>
@@ -307,10 +341,9 @@ footer img{display:block;width:150px;height:40px;object-fit:contain}
 <div class="f full"><button class="btn" type="submit">Review booking request</button></div>
 </form>
 <div class="done" id="done" hidden>
-<h3>Your request is ready to send</h3>
-<p style="margin-top:8px">This page does not send anything by itself. Use the button below to send it to the studio on WhatsApp, or copy it.</p>
-<div class="row"><a class="btn" id="mail" href="#">Send on WhatsApp</a><button class="btn alt" id="copy" type="button">Copy request</button></div>
-<p id="copied" style="margin:10px 0 0;color:var(--teal);font-weight:700"></p>
+<h3 id="done-title">Your request was sent</h3>
+<p id="done-message" style="margin-top:8px">The request was sent to Google Forms. This page cannot confirm Google's receipt. You can open a prefilled email to yourself below; press Send in your email app to receive the copy.</p>
+<div class="row"><a class="btn" id="mail" href="#">Email me a copy</a></div>
 </div>
 </div>
 <aside class="ticket" id="ticket" aria-label="Request summary" aria-hidden="true" inert>
@@ -318,21 +351,22 @@ footer img{display:block;width:150px;height:40px;object-fit:contain}
 <dl id="sum"></dl>
 </aside>
 </div>
+<iframe id="google-form-target" name="google-form-target" title="Google booking form submission" hidden></iframe>
+<form id="google-form-submit" action="https://docs.google.com/forms/d/e/1FAIpQLSdDzC23pfxyqGqdDTNzJ21jWmC935EWGnKmVV5HseRsB3Q68g/formResponse" method="post" target="google-form-target" hidden></form>
 </div>
 </main>
 
-<footer><div class="wrap"><img src="asserts/resonance-logo-animated-dark.svg" alt="Resonance Sound by Awhizy" width="150" height="40"><span>Live sound, studio production, equipment rentals, church sound upgrades, training and consultation. Office location: Ibadan, Nigeria. Call or WhatsApp 0816 825 9465.</span></div></footer>
+<footer><div class="wrap"><img src="asserts/resonance-logo-animated-dark.svg" alt="Resonance Sound by Awhizy" width="150" height="40"><span>Live sound, studio production, equipment rentals, church sound upgrades, training and consultation. Call or WhatsApp 0816 825 9465.</span></div></footer>
 
 <script>
-var CONTACT_EMAIL="bookings@yourstudio.com";
 var S=[
 {n:"Studio production",w:"Record, edit and finish vocals and instruments in a treated room, with an engineer running the session.",b:"Songs, EPs, choirs, demos",g:"Tracked takes, mixing and mastered files",p:3,img:"https://images.unsplash.com/photo-1511379938547-c1f69419868d?auto=format&fit=crop&w=1000&q=80",alt:"Musician recording in a studio"},
 {n:"Live sound production",w:"PA, microphones, mixing and a crew for the whole event, from soundcheck to the last speaker.",b:"Concerts, weddings, conferences, services",g:"Setup, operation and teardown",p:7,img:"https://images.unsplash.com/photo-1506157786151-b8491531f063?auto=format&fit=crop&w=1000&q=80",alt:"Crowd enjoying a live concert"},
-{n:"Equipment rentals",w:"Hire speakers, mixers, microphones and other sound gear for your event, with setup support available.",b:"Events, shows, churches",g:"Tested equipment and optional setup support",p:9,img:"https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?auto=format&fit=crop&w=1000&q=85",alt:"Mixing console and audio equipment available for hire"},
+{n:"Equipment rentals",w:"Hire speakers, mixers, microphones and other sound gear for your event, with setup support available.",b:"Events, shows, churches",g:"Tested equipment and optional setup support",p:9,img:"https://www.dbevents.co.nz/wp-content/uploads/2021/03/line-array-stack-main-600x600.png",alt:"Line-array speaker stacks and subwoofers available for hire"},
 {n:"Personal sound engineer",w:"A dedicated sound engineer assigned to your concert, tour date or event, who learns your sound and runs it for you.",b:"Artists, bands, concerts, tours",g:"One engineer from soundcheck to the last song",p:10,img:"https://images.unsplash.com/photo-1524368535928-5b5e00ddc76b?auto=format&fit=crop&w=1000&q=80",alt:"Sound crew working at a live music event"},
 {n:"Church sound upgrades",w:"Assess and upgrade your church sound system, from speakers and mixers to installation and operator set-up.",b:"Churches and worship centres",g:"System assessment, installation and handover",p:4,img:"https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?auto=format&fit=crop&w=1000&q=80",alt:"Church interior prepared for a service"},
 {n:"Training",w:"Hands-on training for sound operators and technical teams, from the basics to running a live service.",b:"Church media teams, aspiring engineers",g:"Practical sessions and guidance",p:2,img:"https://images.unsplash.com/photo-1520523839897-bd0b52f945a0?auto=format&fit=crop&w=1000&q=80",alt:"Audio equipment used for hands-on music training"},
-{n:"Consultation",w:"Talk through your studio, event or church sound plans and get clear advice on equipment, set-up and budget.",b:"New studios, events, churches",g:"A clear plan and recommendations",p:6,img:"https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?auto=format&fit=crop&w=1000&q=80",alt:"Stage lighting and sound at an outdoor music event"}
+{n:"Consultation",w:"Talk through your studio, event or church sound plans and get clear advice on equipment, set-up and budget.",b:"New studios, events, churches",g:"A clear plan and recommendations",p:6,img:"https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=1000&h=750&q=80",alt:"Calm, modern office interior prepared for a consultation"}
 ];
 var $=function(i){return document.getElementById(i)};
 var wave=$("wave"),tabs=$("tabs"),sel=$("service"),B=56;
@@ -364,20 +398,73 @@ function fill(){var h="";F.forEach(function(k){if(k==="notes")return;h+="<div><d
 var dds=$("sum").querySelectorAll("dd"),n=0;F.forEach(function(k){if(k==="notes")return;dds[n++].textContent=val(k)||"Not added yet"});
 try{var o={};F.forEach(function(k){o[k]=$(k).value});localStorage.setItem("rs-draft",JSON.stringify(o))}catch(e){}}
 function hidePreview(){$("ticket").setAttribute("aria-hidden","true");$("ticket").inert=true}
-$("form").addEventListener("input",function(){hidePreview();$("done").hidden=true;fill()});
-$("form").addEventListener("change",function(){hidePreview();$("done").hidden=true;fill()});fill();
+function setBookingFormDisabled(disabled){Array.prototype.forEach.call($("form").elements,function(element){element.disabled=disabled})}
+$("form").addEventListener("input",function(){hidePreview();$("done").hidden=true;$("err").textContent="";fill()});
+$("form").addEventListener("change",function(){hidePreview();$("done").hidden=true;$("err").textContent="";fill()});fill();
 
 function text(){return"Booking request\n"+F.filter(function(k){return val(k)}).map(function(k){return L[k]+": "+val(k)}).join("\n")}
+var serviceCategories={
+"Studio production":"Recording, Mixing & Mastering,",
+"Live sound production":"Live Sound Engineering",
+"Equipment rentals":"Equipment Rental",
+"Personal sound engineer":"Live Sound Engineering",
+"Church sound upgrades":"Live Sound Engineering",
+"Training":"Studio sessions",
+"Consultation":"Studio sessions"
+};
+function addGoogleField(name,value){var input=document.createElement("input");input.type="hidden";input.name=name;input.value=value;$("google-form-submit").appendChild(input)}
+function submitToGoogle(){
+var selectedService=$("service").value,parts=$("date").value.split("-"),clock=$("time").value.split(":");
+var notes=["Website service selected: "+selectedService];
+if($("phone").value.trim())notes.push("Phone/WhatsApp: "+$("phone").value.trim());
+if($("notes").value.trim())notes.push("Additional notes: "+$("notes").value.trim());
+var googleForm=$("google-form-submit");googleForm.replaceChildren();
+addGoogleField("entry.29370910",$("name").value.trim());
+addGoogleField("entry.1089605430",$("email").value.trim());
+addGoogleField("entry.2007903094",serviceCategories[selectedService]);
+addGoogleField("entry.323005754_year",parts[0]);
+addGoogleField("entry.323005754_month",parts[1]);
+addGoogleField("entry.323005754_day",parts[2]);
+addGoogleField("entry.2028300715_hour",clock[0]);
+addGoogleField("entry.2028300715_minute",clock[1]);
+addGoogleField("entry.987832554",$("hours").value);
+addGoogleField("entry.1786880766",$("venue").value.trim());
+addGoogleField("entry.1397370559",notes.join("\n\n"));
+googleForm.submit()
+}
 $("form").addEventListener("submit",function(e){e.preventDefault();var m=[];
 if(!$("name").value.trim())m.push("Enter your name.");
-if(!$("email").value.trim()&&!$("phone").value.trim())m.push("Add an email or a phone number so we can reply.");
+if(!$("email").value.trim())m.push("Enter your email address; the booking form requires it.");
+else if(!$("email").validity.valid)m.push("Enter a valid email address.");
 if(!$("date").value)m.push("Choose a date.");
+if(!$("time").value)m.push("Choose a start time.");
+if(!$("hours").value||Number($("hours").value)<1||Number($("hours").value)>12)m.push("Enter between 1 and 12 hours.");
+if(!serviceCategories[$("service").value])m.push("This service cannot be submitted. Please use the Open Google booking form link above.");
 $("err").textContent=m.join(" ");
 if(m.length){hidePreview();$("done").hidden=true;return}
 $("ticket").setAttribute("aria-hidden","false");$("ticket").inert=false;
-$("mail").href="https://wa.me/2348168259465?text="+encodeURIComponent(text());
-$("done").hidden=false;$("done").scrollIntoView({behavior:"smooth",block:"nearest"})});
-$("copy").onclick=function(){var t=text();(navigator.clipboard?navigator.clipboard.writeText(t):Promise.reject()).then(function(){$("copied").textContent="Request copied."},function(){$("copied").textContent="Copy failed. Select the summary on the right and copy it."})};
+var button=$("form").querySelector('button[type="submit"]');setBookingFormDisabled(true);button.textContent="Submitting...";
+var target=$("google-form-target"),settled=false;
+function finishSubmission(){
+if(settled)return;settled=true;clearTimeout(timer);target.removeEventListener("load",finishSubmission);
+setBookingFormDisabled(false);button.textContent="Review booking request";
+$("done-title").textContent="Your request was sent";
+$("done-message").textContent="The request was sent to Google Forms. This page cannot confirm Google's receipt. You can open a prefilled email to yourself below; press Send in your email app to receive the copy.";
+$("mail").hidden=false;
+$("mail").href="mailto:"+$("email").value.trim()+"?subject="+encodeURIComponent("Your Resonance Sound booking request")+"&body="+encodeURIComponent(text());
+$("done").hidden=false;$("done").scrollIntoView({behavior:"smooth",block:"nearest"})
+}
+target.addEventListener("load",finishSubmission);
+var timer=setTimeout(function(){
+if(settled)return;settled=true;target.removeEventListener("load",finishSubmission);
+setBookingFormDisabled(false);button.textContent="Review booking request";
+$("done-title").textContent="We couldn't confirm the submission";
+$("done-message").textContent="The request may not have reached Google Forms. Please use the Open Google booking form link above to submit it directly.";
+$("mail").hidden=true;
+$("done").hidden=false;
+},15000);
+submitToGoogle();
+});
 </script>
 </body>
 </html>

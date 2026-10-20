@@ -1,0 +1,124 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 560" role="img" aria-labelledby="title">
+  <title id="title">Animated graphic equalizer with real-time audio analyzer</title>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#10181d"/>
+      <stop offset="1" stop-color="#14212b"/>
+    </linearGradient>
+    <linearGradient id="bars" x1="0" y1="1" x2="0" y2="0">
+      <stop stop-color="#1f6f78"/>
+      <stop offset=".58" stop-color="#4fb6bf"/>
+      <stop offset="1" stop-color="#ff5a4e"/>
+    </linearGradient>
+    <radialGradient id="glow">
+      <stop stop-color="#4fb6bf" stop-opacity=".27"/>
+      <stop offset="1" stop-color="#4fb6bf" stop-opacity="0"/>
+    </radialGradient>
+    <style>
+      .rta-bar{transform-box:fill-box;transform-origin:center bottom;animation:rta .62s ease-in-out infinite alternate}
+      .rta-bar:nth-child(4n+1){animation-duration:.48s}
+      .rta-bar:nth-child(4n+2){animation-duration:.73s}
+      .rta-bar:nth-child(4n+3){animation-duration:.56s}
+      .live-dot{animation:live 1s ease-in-out infinite}
+      @keyframes rta{from{transform:scaleY(.3)}to{transform:scaleY(1.15)}}
+      @keyframes live{50%{opacity:.3}}
+      @media(prefers-reduced-motion:reduce){.rta-bar,.live-dot{animation:none}}
+    </style>
+  </defs>
+  <rect width="1200" height="560" fill="url(#bg)"/>
+  <ellipse cx="600" cy="280" rx="590" ry="370" fill="url(#glow)"/>
+  <g fill="none" stroke="#4fb6bf" stroke-opacity=".16">
+    <path d="M0 140h1200M0 280h1200M0 420h1200"/>
+  </g>
+  <g fill="url(#bars)">
+    <rect x="74" y="234" width="34" height="92" rx="17"/>
+    <rect x="130" y="176" width="34" height="208" rx="17"/>
+    <rect x="186" y="115" width="34" height="330" rx="17"/>
+    <rect x="242" y="200" width="34" height="160" rx="17"/>
+    <rect x="298" y="147" width="34" height="266" rx="17"/>
+    <rect x="354" y="73" width="34" height="414" rx="17"/>
+    <rect x="410" y="156" width="34" height="248" rx="17"/>
+    <rect x="466" y="220" width="34" height="120" rx="17"/>
+    <rect x="522" y="104" width="34" height="352" rx="17"/>
+    <rect x="578" y="55" width="34" height="450" rx="17"/>
+    <rect x="634" y="167" width="34" height="226" rx="17"/>
+    <rect x="690" y="118" width="34" height="324" rx="17"/>
+    <rect x="746" y="208" width="34" height="144" rx="17"/>
+    <rect x="802" y="86" width="34" height="388" rx="17"/>
+    <rect x="858" y="152" width="34" height="256" rx="17"/>
+    <rect x="914" y="224" width="34" height="112" rx="17"/>
+    <rect x="970" y="130" width="34" height="300" rx="17"/>
+    <rect x="1026" y="82" width="34" height="396" rx="17"/>
+    <rect x="1082" y="184" width="34" height="192" rx="17"/>
+  </g>
+  <g font-family="Arial,sans-serif">
+    <rect x="70" y="54" width="1060" height="452" rx="24" fill="#0b1115" stroke="#4fb6bf" stroke-opacity=".55" stroke-width="3"/>
+    <rect x="84" y="68" width="1032" height="424" rx="16" fill="#1b2930" stroke="#ffffff" stroke-opacity=".16"/>
+    <text x="118" y="112" fill="#e8eef0" font-size="22" font-weight="700" letter-spacing="5">GRAPHIC EQUALIZER + RTA</text>
+    <circle class="live-dot" cx="946" cy="106" r="6" fill="#ff5a4e"/>
+    <text x="1080" y="112" text-anchor="end" fill="#ff8c82" font-size="14" letter-spacing="3">RTA • LIVE</text>
+    <path d="M110 130h980" stroke="#ffffff" stroke-opacity=".18"/>
+    <g fill="#9aaab2" font-size="13">
+      <text x="120" y="166">+12 dB</text><text x="120" y="227">+6</text>
+      <text x="120" y="290" fill="#ff5a4e">0</text><text x="120" y="350">-6</text>
+      <text x="120" y="418">-12 dB</text>
+    </g>
+    <g stroke="#ffffff" stroke-opacity=".18" stroke-width="2">
+      <path d="M184 162h866M184 225h866M184 288h866M184 351h866M184 414h866"/>
+      <path d="M225 190v213M309 190v213M393 190v213M477 190v213M561 190v213M645 190v213M729 190v213M813 190v213M897 190v213M981 190v213" stroke="#4fb6bf" stroke-opacity=".65"/>
+    </g>
+    <g fill="#4fb6bf" fill-opacity=".18">
+      <rect x="202" y="180" width="46" height="234" rx="8"/><rect x="286" y="180" width="46" height="234" rx="8"/>
+      <rect x="370" y="180" width="46" height="234" rx="8"/><rect x="454" y="180" width="46" height="234" rx="8"/>
+      <rect x="538" y="180" width="46" height="234" rx="8"/><rect x="622" y="180" width="46" height="234" rx="8"/>
+      <rect x="706" y="180" width="46" height="234" rx="8"/><rect x="790" y="180" width="46" height="234" rx="8"/>
+      <rect x="874" y="180" width="46" height="234" rx="8"/><rect x="958" y="180" width="46" height="234" rx="8"/>
+    </g>
+    <g fill="url(#bars)" opacity=".9">
+      <rect class="rta-bar" x="188" y="310" width="18" height="104" rx="5" style="animation-delay:-.1s"/>
+      <rect class="rta-bar" x="216" y="284" width="18" height="130" rx="5" style="animation-delay:-.5s"/>
+      <rect class="rta-bar" x="244" y="298" width="18" height="116" rx="5" style="animation-delay:-.3s"/>
+      <rect class="rta-bar" x="272" y="260" width="18" height="154" rx="5" style="animation-delay:-.7s"/>
+      <rect class="rta-bar" x="300" y="276" width="18" height="138" rx="5" style="animation-delay:-.2s"/>
+      <rect class="rta-bar" x="328" y="244" width="18" height="170" rx="5" style="animation-delay:-.6s"/>
+      <rect class="rta-bar" x="356" y="250" width="18" height="164" rx="5" style="animation-delay:-.4s"/>
+      <rect class="rta-bar" x="384" y="226" width="18" height="188" rx="5" style="animation-delay:-.8s"/>
+      <rect class="rta-bar" x="412" y="242" width="18" height="172" rx="5" style="animation-delay:-.15s"/>
+      <rect class="rta-bar" x="440" y="208" width="18" height="206" rx="5" style="animation-delay:-.55s"/>
+      <rect class="rta-bar" x="468" y="216" width="18" height="198" rx="5" style="animation-delay:-.35s"/>
+      <rect class="rta-bar" x="496" y="192" width="18" height="222" rx="5" style="animation-delay:-.75s"/>
+      <rect class="rta-bar" x="524" y="204" width="18" height="210" rx="5" style="animation-delay:-.25s"/>
+      <rect class="rta-bar" x="552" y="182" width="18" height="232" rx="5" style="animation-delay:-.65s"/>
+      <rect class="rta-bar" x="580" y="198" width="18" height="216" rx="5" style="animation-delay:-.45s"/>
+      <rect class="rta-bar" x="608" y="174" width="18" height="240" rx="5" style="animation-delay:-.85s"/>
+      <rect class="rta-bar" x="636" y="188" width="18" height="226" rx="5" style="animation-delay:-.12s"/>
+      <rect class="rta-bar" x="664" y="204" width="18" height="210" rx="5" style="animation-delay:-.52s"/>
+      <rect class="rta-bar" x="692" y="220" width="18" height="194" rx="5" style="animation-delay:-.32s"/>
+      <rect class="rta-bar" x="720" y="214" width="18" height="200" rx="5" style="animation-delay:-.72s"/>
+      <rect class="rta-bar" x="748" y="236" width="18" height="178" rx="5" style="animation-delay:-.22s"/>
+      <rect class="rta-bar" x="776" y="224" width="18" height="190" rx="5" style="animation-delay:-.62s"/>
+      <rect class="rta-bar" x="804" y="246" width="18" height="168" rx="5" style="animation-delay:-.42s"/>
+      <rect class="rta-bar" x="832" y="238" width="18" height="176" rx="5" style="animation-delay:-.82s"/>
+      <rect class="rta-bar" x="860" y="260" width="18" height="154" rx="5" style="animation-delay:-.18s"/>
+      <rect class="rta-bar" x="888" y="270" width="18" height="144" rx="5" style="animation-delay:-.58s"/>
+      <rect class="rta-bar" x="916" y="254" width="18" height="160" rx="5" style="animation-delay:-.38s"/>
+      <rect class="rta-bar" x="944" y="282" width="18" height="132" rx="5" style="animation-delay:-.78s"/>
+      <rect class="rta-bar" x="972" y="294" width="18" height="120" rx="5" style="animation-delay:-.28s"/>
+      <rect class="rta-bar" x="1000" y="278" width="18" height="136" rx="5" style="animation-delay:-.68s"/>
+      <rect class="rta-bar" x="1028" y="310" width="18" height="104" rx="5" style="animation-delay:-.48s"/>
+    </g>
+    <g fill="url(#bars)" stroke="#e8eef0" stroke-opacity=".75" stroke-width="2">
+      <rect x="207" y="265" width="36" height="20" rx="6"/><rect x="291" y="239" width="36" height="20" rx="6"/>
+      <rect x="375" y="293" width="36" height="20" rx="6"/><rect x="459" y="226" width="36" height="20" rx="6"/>
+      <rect x="543" y="272" width="36" height="20" rx="6"/><rect x="627" y="301" width="36" height="20" rx="6"/>
+      <rect x="711" y="247" width="36" height="20" rx="6"/><rect x="795" y="278" width="36" height="20" rx="6"/>
+      <rect x="879" y="220" width="36" height="20" rx="6"/><rect x="963" y="258" width="36" height="20" rx="6"/>
+    </g>
+    <g fill="#c9d5da" font-size="13" text-anchor="middle">
+      <text x="225" y="448">31</text><text x="309" y="448">63</text><text x="393" y="448">125</text>
+      <text x="477" y="448">250</text><text x="561" y="448">500</text><text x="645" y="448">1k</text>
+      <text x="729" y="448">2k</text><text x="813" y="448">4k</text><text x="897" y="448">8k</text>
+      <text x="981" y="448">16k Hz</text>
+    </g>
+  </g>
+</svg>

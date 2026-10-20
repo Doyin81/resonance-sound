@@ -1,0 +1,7 @@
+{
+  "compilerOptions": {
+    "jsx": "preserve"
+  },
+  "include": ["next-env.d.ts", ".next/types/**/*.ts", "**/*.js", "**/*.jsx"],
+  "exclude": ["node_modules"]
+}
