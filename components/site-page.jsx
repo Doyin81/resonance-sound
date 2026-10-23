@@ -5,7 +5,6 @@ import { useEffect, useRef, useState } from "react";
 import { services } from "../lib/services";
 
 const googleFormAction = "https://docs.google.com/forms/d/e/1FAIpQLSdDzC23pfxyqGqdDTNzJ21jWmC935EWGnKmVV5HseRsB3Q68g/formResponse";
-const googleFormView = "https://docs.google.com/forms/d/e/1FAIpQLSdDzC23pfxyqGqdDTNzJ21jWmC935EWGnKmVV5HseRsB3Q68g/viewform";
 const whatsapp = "https://wa.me/2348168259465";
 const fieldLabels = { name: "Name", email: "Email", phone: "Phone", service: "Service", date: "Date", time: "Start time", hours: "Hours", venue: "Venue", notes: "Notes" };
 const serviceCategories = {
@@ -127,7 +126,7 @@ function ExplorePage() {
         </div>
       </section>
       <section className="explore-video">
-        <video controls playsInline preload="metadata" aria-label="Mini studio arrangement for a client"><source src="/assets/explore-mini-studio.mp4" type="video/mp4" />Your browser does not support video playback.</video>
+        <video controls playsInline preload="metadata" aria-label="Mini studio arrangement for a client"><source src="/assets/explore-mini-studio.mp4?v=bd3d83791a00" type="video/mp4" />Your browser does not support video playback.</video>
         <div><h2>Mini studio arrangement for a client</h2><p>See a recent mini studio setup arranged for one of our clients.</p></div>
       </section>
       <HowItWorks />
@@ -152,6 +151,7 @@ function AboutPage() {
       <section className="about-hero"><div className="wrap"><h1>About us</h1><p>Professional sound, carefully engineered for every space and moment.</p><img className="about-hero-logo" src="/assets/resonance-logo-animated-dark.svg" alt="Resonance by Awhizy" width="300" height="80" /></div></section>
       <div className="wrap">
         <section className="band about-copy"><h2>Who we are</h2><p>We are a sound production company helping artists, churches, event organisers, studios, and individuals get clear, dependable audio. We bring together experienced engineering, practical planning, and the right equipment for each project.</p><p>From the first conversation through setup and delivery, we focus on understanding the space, audience, and goals so every sound solution fits the people using it.</p></section>
+        <section className="band about-copy"><h2>Our vision</h2><p>To be the most trusted sound production company in Nigeria, known for clear sound, dependable service and the engineers we train.</p><h2>Our mission</h2><p>To deliver professional live sound, studio production, equipment rentals, church sound upgrades, training and consultation, so that every voice is heard clearly, through technical excellence and honest service.</p></section>
         <section className="about-gallery" aria-label="Resonance Sound in action">
           <figure><img src="https://images.unsplash.com/photo-1511379938547-c1f69419868d?auto=format&fit=crop&w=900&q=80" alt="Musician recording in a studio" loading="lazy" /><figcaption>Studio recording</figcaption></figure>
           <figure><img src="https://images.unsplash.com/photo-1506157786151-b8491531f063?auto=format&fit=crop&w=900&q=80" alt="Crowd at a live music event" loading="lazy" /><figcaption>Live sound</figcaption></figure>
@@ -225,7 +225,7 @@ function BookingPage() {
     if (!booking.date) messages.push("Choose a date.");
     if (!booking.time) messages.push("Choose a start time.");
     if (!booking.hours || Number(booking.hours) < 1 || Number(booking.hours) > 12) messages.push("Enter between 1 and 12 hours.");
-    if (!serviceCategories[booking.service]) messages.push("This service cannot be submitted. Please use the Open Google booking form link above.");
+    if (!serviceCategories[booking.service]) messages.push("This service cannot be submitted from this form. Please choose another service.");
     if (messages.length) { setErrors(messages.join(" ")); setSummaryVisible(false); return; }
 
     const [year, month, day] = booking.date.split("-");
@@ -270,7 +270,7 @@ function BookingPage() {
 
   return (
     <div className="wrap book">
-      <div><h1>Book a session</h1><p className="book-intro">Send your booking request using our Google Form. We reply with a quote and confirm the date.</p><p className="quote-promise">Your quote will be sent within 24 hours.</p><p><a className="btn" href={googleFormView} target="_blank" rel="noreferrer">Open Google booking form</a></p><p className="book-hint">Complete the form below to send your request to our booking form. After submission, you can open a prefilled email draft addressed to yourself and press Send to receive a copy.</p>
+      <div><h1>Book a session</h1><p className="book-intro">Send your booking request using our Google Form. We reply with a quote and confirm the date.</p><p className="quote-promise">Your quote will be sent within 24 hours.</p><p className="book-hint">Complete the form below to send your request to our booking form. After submission, you can open a prefilled email draft addressed to yourself and press Send to receive a copy.</p>
         <form className="booking-form" onSubmit={submit} noValidate>
           <div className="f"><label htmlFor="name">Full name</label><input id="name" autoComplete="name" value={booking.name} onChange={(event) => update("name", event.target.value)} /></div>
           <div className="f"><label htmlFor="email">Email</label><input id="email" type="email" autoComplete="email" value={booking.email} onChange={(event) => update("email", event.target.value)} /></div>
@@ -284,7 +284,7 @@ function BookingPage() {
           {errors && <p className="err" role="alert">{errors}</p>}
           <div className="f full"><button className="btn" type="submit" disabled={status === "submitting"}>{status === "submitting" ? "Submitting..." : "Review booking request"}</button></div>
         </form>
-        {status && status !== "submitting" && <div className="done" role="status"><h3>{status === "sent" ? "Your request was sent" : "We couldn't confirm the submission"}</h3><p>{status === "sent" ? "The request was sent to Google Forms. This page cannot confirm Google's receipt. You can open a prefilled email to yourself below; press Send in your email app to receive the copy." : "The request may not have reached Google Forms. Please use the Open Google booking form link above to submit it directly."}</p>{status === "sent" && <a className="btn" href={emailHref}>Email me a copy</a>}</div>}
+        {status && status !== "submitting" && <div className="done" role="status"><h3>{status === "sent" ? "Your request was sent" : "We couldn't confirm the submission"}</h3><p>{status === "sent" ? "The request was sent to Google Forms. This page cannot confirm Google's receipt. You can open a prefilled email to yourself below; press Send in your email app to receive the copy." : "The request may not have reached Google Forms. Please try submitting your request again."}</p>{status === "sent" && <a className="btn" href={emailHref}>Email me a copy</a>}</div>}
       </div>
       <aside className="ticket" aria-label="Request summary" aria-hidden={!summaryVisible} inert={!summaryVisible}>
         <h2>Your request</h2><dl>{Object.entries(fieldLabels).filter(([key]) => key !== "notes").map(([key, label]) => <div key={key}><dt>{label}</dt><dd>{booking[key] || "Not added yet"}</dd></div>)}</dl>
