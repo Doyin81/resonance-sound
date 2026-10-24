@@ -122,7 +122,7 @@ function ExplorePage() {
         <div className="explore-gallery-grid">
           <figure><img src="https://www.dbevents.co.nz/wp-content/uploads/2021/03/line-array-stack-main-600x600.png" alt="Pair of line-array speaker stacks and subwoofers" loading="lazy" /><figcaption>Line-array speakers</figcaption></figure>
           <figure><img className="product-photo" src="https://behringer.com/wing/products/wing.png" alt="Behringer WING digital mixing console" loading="lazy" /><figcaption>Behringer WING</figcaption></figure>
-          <figure><div className="explore-photo-slot" role="img" aria-label="Photo placeholder for behind the scenes"><span>Add photo</span></div><figcaption>Behind the scenes</figcaption></figure>
+          <figure><video className="explore-gallery-video" autoPlay loop muted playsInline preload="metadata" aria-hidden="true" tabIndex={-1}><source src="/assets/awhizy-global-motion-graphic.mp4" type="video/mp4" /></video><figcaption>Behind the scenes</figcaption></figure>
         </div>
       </section>
       <section className="explore-video">

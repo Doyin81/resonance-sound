@@ -101,7 +101,8 @@ section.band{padding:40px 0}
 .explore-gallery>p{color:var(--muted);margin:12px auto 22px}
 .explore-gallery-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;text-align:left}
 .explore-gallery figure{margin:0;overflow:hidden;border:1px solid var(--line);border-radius:14px;background:var(--surface)}
-.explore-photo-slot,.explore-gallery figure>img{display:grid;width:100%;aspect-ratio:4/3;min-height:200px}
+.explore-photo-slot,.explore-gallery figure>img,.explore-gallery-video{display:grid;width:100%;aspect-ratio:4/3;min-height:200px}
+.explore-gallery-video{object-fit:cover;background:#14212B}
 .explore-photo-slot{place-items:center;border-bottom:1px solid var(--line);background:linear-gradient(135deg,var(--bg),var(--surface));color:var(--muted)}
 .explore-photo-slot span{display:flex;align-items:center;gap:10px;font-weight:700}
 .explore-photo-slot span::before{content:"+";width:34px;height:34px;border:1px dashed currentColor;border-radius:50%;display:grid;place-items:center;font-size:1.35rem;line-height:1}
@@ -186,6 +187,7 @@ footer img{display:block;width:150px;height:40px;object-fit:contain}
 @media (max-width:760px){header .wrap{justify-content:center}header nav{width:100%;justify-content:center;flex-wrap:wrap}}
 @media (max-width:380px){header nav a{padding:6px 8px;font-size:.875rem}}
 @media (prefers-reduced-motion:reduce){.wave span{transition:none}.meet-art,.meet-art::before,.meet-art::after,.meet-brandplate,.meet-bars i{animation:none}}
+@media (prefers-reduced-motion:reduce){.explore-gallery-video{display:none}}
 </style>
 </head>
 <body>
@@ -220,7 +222,7 @@ footer img{display:block;width:150px;height:40px;object-fit:contain}
 <div class="explore-gallery-grid">
 <figure><img src="https://www.dbevents.co.nz/wp-content/uploads/2021/03/line-array-stack-main-600x600.png" alt="Pair of line-array speaker stacks and subwoofers" loading="lazy" decoding="async"><figcaption>Line-array speakers</figcaption></figure>
 <figure><img class="product-photo" src="https://behringer.com/wing/products/wing.png" alt="Behringer WING digital mixing console" loading="lazy" decoding="async"><figcaption>Behringer WING</figcaption></figure>
-<figure><div class="explore-photo-slot" role="img" aria-label="Photo placeholder for behind the scenes"><span>Add photo</span></div><figcaption>Behind the scenes</figcaption></figure>
+<figure><video class="explore-gallery-video" autoplay loop muted playsinline preload="metadata" aria-hidden="true" tabindex="-1"><source src="asserts/awhizy-global-motion-graphic.mp4" type="video/mp4"></video><figcaption>Behind the scenes</figcaption></figure>
 </div>
 </section>
 
